@@ -65,6 +65,11 @@ print('W 2', w)
 print('b 2', b)
 
 print('predict city 1 : brasilia')
+brasilia_matrix = tf.constant([[-43.598, -28.107],
+                               [-46.268, -14.62],
+                               [-45.154, -3.249]], tf.float32)
+print(linear_model.predict(brasilia_matrix).tolist())
+
 """"
 print(linear_model.predict([[-43.598 -28.107],
                             [-46.268 -14.62 ], 
@@ -79,6 +84,11 @@ print(linear_model.predict([[-43.598 -28.107],
                             """
 
 print('predict city 2 : kazajistan')
+kazajistan_matrix = tf.constant([[65.036, 55.836],
+                                 [58.542, 51.449],
+                                 [-45.154, -3.249]], tf.float32)
+print(linear_model.predict(kazajistan_matrix).tolist())
+
 """"
 print(linear_model.predict([[ 65.036 55.836],
                             [ 61.994 40.178],

@@ -65,33 +65,31 @@ b = linear_model.layers[2].get_weights()[1]
 print('W 2', w)
 print('b 2', b)
 
-print('predict city 1 : Buenos Aires')
-""""
-print(linear_model.predict([[-43.598 -28.107],
-                            [-46.268 -14.62 ], 
-                            [-45.154 -3.249],
-                            [-46.52 -21.315],
-                            [-41.719 -10.532],
-                            [-48.291 -28.376],
-                            [-37.896 -15.371],
-                            [-50.693 -14.077],
-                            [-45.473 -2.488],
-                            [-51.73 -12.565]]).tolist())
-                            """
+print('predict city 1 : Buenos Aires') # CAMBIAR COORDENADAS
+buenosaires_matrix = tf.constant([[-34.6083, -58.3712],
+                               [-34.6037, -58.3816],
+                               [-34.6106, -58.3621],
+                               [-34.5885, -58.3974],
+                               [-34.6345, -58.3634],
+                               [-34.5895, -58.4240],
+                               [-34.5809, -58.4202],
+                               [-34.5713, -58.4565],
+                               [-34.5997, -58.3840],
+                               [-34.4267, -58.5746]], tf.float32)
+print(linear_model.predict(buenosaires_matrix).tolist())
 
-print('predict city 2 : Barcelona')
-""""
-print(linear_model.predict([[ 65.036 55.836],
-                            [ 61.994 40.178],
-                            [ 63.825 55.253],
-                            [ 67.445 44.393],
-                            [ 64.888 45.202],
-                            [ 64.549 54.043],
-                            [ 75.494 43.773],
-                            [ 66.424 54.609],
-                            [ 71.869 48.677],
-                            [ 58.542 51.449]]).tolist())
-                            """
+print('predict city 2 : Barcelona') # CAMBIAR COORDENADAS
+barcelona_matrix = tf.constant([[41.4036, 2.1744],
+                                 [41.4147, 2.1526],
+                                 [41.3809, 2.1739],
+                                 [41.3834, 2.1765],
+                                 [41.3809, 2.1228],
+                                 [41.3645, 2.1552],
+                                 [41.3918, 2.1649],
+                                 [41.3781, 2.1886],
+                                 [41.3936, 2.1634],
+                                 [41.4217, 2.1185]], tf.float32)
+print(linear_model.predict(barcelona_matrix).tolist())
 
 #export_path = 'linear-model/1/'
 #tf.saved_model.save(linear_model, os.path.join('./',export_path))
